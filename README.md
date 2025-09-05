@@ -1,27 +1,37 @@
-# Explorando Workflows Automatizados com AWS Step Functions - Desafio de Projeto
- Code Girls 2025
- <br>
- *DIO em parceria com o Santander*
+# Explorando Workflows Automatizados com AWS Step Functions 🚀
+
+Desafio de projeto DIO em parceria com o Santander
+<br>
+**Code Girls** 2025
 
 ---
 
-# 🚀 AWS Step Functions – Resumo
-
 ## 📖 O que é?
-O **AWS Step Functions** é um serviço da Amazon que ajuda a orquestrar vários serviços e tarefas em uma **sequência de passos**, por meio de fluxos de trabalho visuais.
-Para utilizá-lo, você define um workflow dividido em estados (steps). Esse fluxo pode ser descrito em JSON ou montado de forma simples no editor visual, arrastando e conectando caixinhas!
+O **AWS Step Functions** é um serviço da **Amazon** que ajuda a orquestrar vários serviços e tarefas em uma sequência de passos, por meio de **fluxos de trabalho visuais**. Para utilizá-lo, você define um workflow dividido em estados (steps). Esse fluxo pode ser descrito em JSON ou montado de forma simples no editor visual, arrastando e conectando caixinhas.
 
 ---
 
 ## ⚙️ Como funciona?
 - O fluxo é definido em **estados (states)**, cada um representando uma ação.  
-- Os estados podem ser:
-  - **Task** → executa algo (ex.: função Lambda).  
-  - **Choice** → faz uma decisão condicional.  
-  - **Wait** → espera um tempo antes de continuar.  
-  - **Parallel** → executa tarefas em paralelo.  
-  - **Success / Fail** → define o fim do workflow.  
 - Os workflows podem ser descritos em **JSON** ou criados no **editor visual** da AWS.  
+- O Step Functions executa esses estados na ordem definida, **cuidando automaticamente do que acontece em caso de falhas, repetições e ramificações.**
+
+---
+
+## 🧩 Componentes de um Workflow no AWS Step Functions
+
+Um workflow no Step Functions é composto por **estados (states)**. Cada estado representa uma etapa da execução. Os principais são:
+
+- **Task** → Executa uma ação, como rodar uma função Lambda, chamar uma API ou interagir com outro serviço da AWS.  
+- **Choice** → Permite criar decisões condicionais (se X → segue por um caminho, se não → segue outro).  
+- **Wait** → Faz o workflow aguardar por um tempo específico ou até uma data/hora definida antes de prosseguir.  
+- **Parallel** → Executa múltiplas ramificações em paralelo e só continua quando todas terminam.  
+- **Map** → Itera sobre uma lista de itens, executando o mesmo conjunto de passos para cada elemento (como um "for" em programação).  
+- **Pass** → Simplesmente passa os dados adiante sem realizar nenhuma ação, útil para testes e ajustes de fluxo.  
+- **Fail** → Finaliza a execução do workflow com status de falha.  
+- **Succeed** → Finaliza a execução do workflow com status de sucesso.  
+
+Esses componentes permitem construir desde fluxos simples até processos complexos e automatizados.
 
 ---
 
